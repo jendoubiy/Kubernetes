@@ -48,3 +48,44 @@ Install the Docker packages.
 ```bash
  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
+
+## Configuring the systemd cgroup driver
+To use the systemd cgroup driver in /etc/containerd/config.toml with runc, set
+```bash
+[plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc]
+  [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc.options]
+    SystemdCgroup = true
+```
+```bash
+# restart containerd service
+sudo systemctl restart containerd
+```
+# Installing kubeadm, kubelet and kubectl 
+
+1 - Update the apt package index and install packages needed to use the Kubernetes apt repository:
+```bash
+sudo apt-get update
+# apt-transport-https may be a dummy package; if so, you can skip that package
+sudo apt-get install -y apt-transport-https ca-certificates curl gpg
+```
+2 - Download the public signing key for the Kubernetes package repositories. The same signing key is used for all repositories so you can disregard the version in the URL:
+```bash
+# If the directory `/etc/apt/keyrings` does not exist, it should be created before the curl command, read the note below.
+# sudo mkdir -p -m 755 /etc/apt/keyrings
+curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.31/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+```
+3 - Add the appropriate Kubernetes apt repository.
+```bash
+# This overwrites any existing configuration in /etc/apt/sources.list.d/kubernetes.list
+echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.31/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+```
+4 - Update the apt package index, install kubelet, kubeadm and kubectl, and pin their version:
+```bash
+sudo apt-get update
+sudo apt-get install -y kubelet kubeadm kubectl
+sudo apt-mark hold kubelet kubeadm kubectl
+```
+5 - (Optional) Enable the kubelet service before running kubeadm:
+```bash
+sudo systemctl enable --now kubelet
+```
