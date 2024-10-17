@@ -89,3 +89,18 @@ sudo apt-mark hold kubelet kubeadm kubectl
 ```bash
 sudo systemctl enable --now kubelet
 ```
+# Initializing Master node
+```bash
+sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=10.5.13.177
+```
+To start using your cluster, you need to run the following as a regular user:
+```bash
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+```
+# Using Weave Net on Kubernetes
+Weave Net provides networking and network policy, and does not require an external database
+```bash
+kubectl apply -f https://reweave.azurewebsites.net/k8s/v1.29/net.yaml
+```
