@@ -1,9 +1,18 @@
- #   <img src="https://github.com/user-attachments/assets/d567506b-5944-4e20-9517-0cd22e0e2769" width="35" title="hover text"> # Workshop 
+ #   <img src="https://github.com/user-attachments/assets/d567506b-5944-4e20-9517-0cd22e0e2769" width="35" title="hover text"> # Workshop
+ 
+## Configure Master node to lunch pods
+By default, the cluster will not schedule pods on the master for security reasons. 
+```bash
+kubectl taint nodes --all node-role.kubernetes.io/control-plane-
+```
+![image](https://github.com/user-attachments/assets/828a373c-44b3-4dd1-b78f-6f3c0cc3e3d1)
 
 Create namespace 'development'
 ```bash
 create namespace development
 ```
+![image](https://github.com/user-attachments/assets/b9a1f893-f2e4-4a6a-9c9a-851eeec26621)
+
 ## Deploying simple Hello App
 Create Deployment file 
 ```bash
