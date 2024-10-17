@@ -9,6 +9,7 @@
 ## Configuration
 
 ![image](https://github.com/user-attachments/assets/f619926f-872d-491d-b619-e1c11bf50755)
+![image](https://github.com/user-attachments/assets/45cc5c02-0d8c-4b4d-8a93-f823dcb3c016)
 
 
 # Install containerd ( Master & Worker nodes )
