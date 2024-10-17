@@ -6,7 +6,7 @@
 * Connectivité réseau complète entre toutes les machines du cluster.
 * Nom d’hôte unique, adresse MAC.
 
-# Install containerd
+# Install containerd ( Master & Worker nodes )
 ##Enable IPv4 packet forwarding 
 
 
@@ -49,7 +49,7 @@ Install the Docker packages.
  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 
-## Configuring the systemd cgroup driver
+## Configuring the systemd cgroup driver ( Master & Worker nodes )
 To use the systemd cgroup driver in /etc/containerd/config.toml with runc, set
 ```bash
 [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc]
@@ -60,7 +60,7 @@ To use the systemd cgroup driver in /etc/containerd/config.toml with runc, set
 # restart containerd service
 sudo systemctl restart containerd
 ```
-# Installing kubeadm, kubelet and kubectl 
+# Installing kubeadm, kubelet and kubectl  ( Master & Worker nodes )
 
 1 - Update the apt package index and install packages needed to use the Kubernetes apt repository:
 ```bash
@@ -99,12 +99,12 @@ mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
-# Using Weave Net on Kubernetes
+# Using Weave Net on Kubernetes ( Master node )
 Weave Net provides networking and network policy, and does not require an external database
 ```bash
 kubectl apply -f https://reweave.azurewebsites.net/k8s/v1.29/net.yaml
 ```
-# Join Worker Node 
+# Join Worker Node ( Worker node )
 
 ```bash
 kubeadm join 10.5.13.177:6443 --token tc03nq.nwh5wkojg319vpaa \
