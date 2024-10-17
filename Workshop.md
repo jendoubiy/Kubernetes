@@ -1,10 +1,10 @@
-# Foobar 
+# Workshop 
 
-Deploying simple Hello App
 Create namespace 'development'
 ```bash
 create namespace development
 ```
+## Deploying simple Hello App
 Create Deployment file 
 ```bash
 apiVersion: apps/v1
