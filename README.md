@@ -111,6 +111,11 @@ Weave Net provides networking and network policy, and does not require an extern
 kubectl apply -f https://reweave.azurewebsites.net/k8s/v1.29/net.yaml
 ```
 ![image](https://github.com/user-attachments/assets/6a180c61-3367-4df6-8c77-a8596e680980)
+Configure internal cluster network
+```bash
+kubectl edit ds weave-net -n kube-system
+```
+![image](https://github.com/user-attachments/assets/0cfa2d6d-443e-4b3e-8769-64bbf2964dbe)
 
 # Join Worker Node ( Worker node )
 
