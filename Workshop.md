@@ -31,10 +31,22 @@ spec:
         - name: TITLE
           value: "Welcome to Azure Kubernetes Service (AKS)"
 ```
+Create service file 
+```bash
+apiVersion: v1
+kind: Service
+metadata:
+  name: aks-helloworld-one
+  namespace: development
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+  selector:
+    app: aks-helloworld-one
+```
+```bash
+kubectl apply -f hello-app.yaml
+```
+![image](https://github.com/user-attachments/assets/921da68f-d57f-48fc-940d-f138a0f6c0bd)
 
-## Prérequis
-
-* 2 Go ou plus de RAM par machine. 
-* 2 CPU ou plus pour les machines de plan de contrôle.
-* Connectivité réseau complète entre toutes les machines du cluster.
-* Nom d’hôte unique, adresse MAC.
