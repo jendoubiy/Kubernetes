@@ -6,6 +6,7 @@
 * 2 CPU ou plus pour les machines de plan de contrôle.
 * Connectivité réseau complète entre toutes les machines du cluster.
 * Nom d’hôte unique, adresse MAC.
+  
 ![image](https://github.com/user-attachments/assets/f619926f-872d-491d-b619-e1c11bf50755)
 
 
