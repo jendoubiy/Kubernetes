@@ -73,5 +73,13 @@ helm install prometheus prometheus-community/prometheus
 ![image](https://github.com/user-attachments/assets/b41005be-41d0-4ca8-b380-065c9f526afc)
 
 ## Manage kubernetes cluster with k9s
-
+```bash
+sudo wget https://github.com/derailed/k9s/releases/download/v0.32.4/k9s_Linux_amd64.tar.gz
+tar -C /usr/bin -xvf k9s_Linux_amd64.tar.gz
+```
+execute k9s tool 
+```bash
+k9s
+```
+![image](https://github.com/user-attachments/assets/213424c5-79a2-42cd-8558-326f5b9958c0)
 
