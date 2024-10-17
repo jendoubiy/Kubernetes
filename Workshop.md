@@ -52,4 +52,11 @@ kubectl apply -f hello-app.yaml
 
 ![image](https://github.com/user-attachments/assets/811a54c2-d711-4905-8096-d2de7b841d75)
 
-
+## Installin helm for ubuntu
+```bash
+curl https://baltocdn.com/helm/signing.asc | gpg --dearmor | sudo tee /usr/share/keyrings/helm.gpg > /dev/null
+sudo apt-get install apt-transport-https --yes
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/helm.gpg] https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
+sudo apt-get update
+sudo apt-get install helm
+```
