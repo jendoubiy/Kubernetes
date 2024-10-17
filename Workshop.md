@@ -72,4 +72,6 @@ helm install prometheus prometheus-community/prometheus
 ```
 ![image](https://github.com/user-attachments/assets/b41005be-41d0-4ca8-b380-065c9f526afc)
 
+## Manage kubernetes cluster with k9s
+
 
