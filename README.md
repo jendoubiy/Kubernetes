@@ -6,7 +6,8 @@
 * 2 CPU ou plus pour les machines de plan de contrôle.
 * Connectivité réseau complète entre toutes les machines du cluster.
 * Nom d’hôte unique, adresse MAC.
- <img src="![image](https://github.com/user-attachments/assets/80e1a211-cb4d-4c71-9a7f-840adebc7b3c)" width="35" title="hover text">
+ ![image](https://github.com/user-attachments/assets/8489d10c-e6b3-4f0a-b088-78c4965b43fa)
+
 # Install containerd ( Master & Worker nodes )
 ##Enable IPv4 packet forwarding 
 
