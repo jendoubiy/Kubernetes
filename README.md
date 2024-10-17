@@ -1,4 +1,5 @@
 ![Kubernetes_logo_without_workmark](https://github.com/user-attachments/assets/d567506b-5944-4e20-9517-0cd22e0e2769) # Kubernetes 
+<img src="https://github.com/user-attachments/assets/d567506b-5944-4e20-9517-0cd22e0e2769" width="350" title="hover text">
 
 ## Prérequis
 
