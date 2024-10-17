@@ -116,3 +116,5 @@ kubectl apply -f https://reweave.azurewebsites.net/k8s/v1.29/net.yaml
 kubeadm join 10.5.13.177:6443 --token tc03nq.nwh5wkojg319vpaa \
 	--discovery-token-ca-cert-hash sha256:869b91d31611b0f64ae08d402bad1a5be636b8cfd5b98997381bdb408bd1a1d5
 ```
+![image](https://github.com/user-attachments/assets/e4315125-2d8a-465a-bcd1-ace15fa61459)
+
