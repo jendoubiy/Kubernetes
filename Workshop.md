@@ -52,7 +52,7 @@ kubectl apply -f hello-app.yaml
 
 ![image](https://github.com/user-attachments/assets/811a54c2-d711-4905-8096-d2de7b841d75)
 
-## Installin helm for ubuntu
+## Installing helm for ubuntu
 ```bash
 curl https://baltocdn.com/helm/signing.asc | gpg --dearmor | sudo tee /usr/share/keyrings/helm.gpg > /dev/null
 sudo apt-get install apt-transport-https --yes
@@ -60,3 +60,16 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/helm.
 sudo apt-get update
 sudo apt-get install helm
 ```
+## installing Prometheus using helm 
+Add helm repo
+```bash
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm repo update
+```
+Install the Prometheus helm chart
+```bash
+helm install prometheus prometheus-community/prometheus
+```
+![image](https://github.com/user-attachments/assets/b41005be-41d0-4ca8-b380-065c9f526afc)
+
+
