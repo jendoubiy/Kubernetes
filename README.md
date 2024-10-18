@@ -13,10 +13,6 @@
 
 
 # Install containerd ( Master & Worker nodes )
-##Enable IPv4 packet forwarding 
-
-
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
 
 ```bash
 # sysctl params required by setup, params persist across reboots
