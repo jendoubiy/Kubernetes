@@ -33,7 +33,16 @@ Jun 16 11:46:05 k8s-l2bridge-ma systemd[1]: kubelet.service: Failed with result 
 systemctl restart kubelet
 ```
  2 / swap is not supported by default on Kubernetes. 
-
+ ```bash
+[kubeadm] WARNING: kubeadm is in beta, please do not use it for production clusters.
+[init] Using Kubernetes version: v1.8.2
+[init] Using Authorization modes: [Node RBAC]
+[preflight] Running pre-flight checks
+[preflight] WARNING: Connection to "https://192.168.78.48:6443" uses proxy "http://user:pwd@192.168.78.15:3128/". If that is not intended, adjust your proxy settings
+[preflight] WARNING: Running with swap on is not supported. Please disable swap or set kubelet's --fail-swap-on flag to false.
+```
+Solution :
+disable the swap in the machine with :
 ```bash
 swapoff -a
 ```
