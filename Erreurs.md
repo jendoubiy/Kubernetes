@@ -11,5 +11,24 @@ kubeadm blocks waiting for control plane during installation
   
  you can try running kubeadm join with the --ignore-preflight-errors flag to ignore any preflight errors
 ```bash
-kubeadm ini --ignore-preflight-errors
+kubeadm init --ignore-preflight-errors
+```
+## Error starting kubelet service
+swap is not supported by default on Kubernetes. 
+```bash
+● kubelet.service - kubelet: The Kubernetes Node Agent
+   Loaded: loaded (/lib/systemd/system/kubelet.service; enabled; vendor preset: enabled)
+  Drop-In: /etc/systemd/system/kubelet.service.d
+           └─10-kubeadm.conf
+   Active: activating (auto-restart) (Result: exit-code) since Tue 2020-06-16 11:46:05 UTC; 9s ago
+     Docs: https://kubernetes.io/docs/home/
+  Process: 28012 ExecStart=/usr/bin/kubelet $KUBELET_KUBECONFIG_ARGS $KUBELET_CONFIG_ARGS $KUBELET_KUBEADM_ARGS $KUBELET_EXTRA_ARGS (code=exited, status=255)
+ Main PID: 28012 (code=exited, status=255)
+
+Jun 16 11:46:05 k8s-l2bridge-ma systemd[1]: kubelet.service: Failed with result 'exit-code'.
+```
+ 1/ swap is not supported by default on Kubernetes. 
+
+```bash
+swapoff -a
 ```
