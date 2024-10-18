@@ -27,8 +27,30 @@ swap is not supported by default on Kubernetes.
 
 Jun 16 11:46:05 k8s-l2bridge-ma systemd[1]: kubelet.service: Failed with result 'exit-code'.
 ```
- 1/ swap is not supported by default on Kubernetes. 
+ 1 / Restart kubelet service 
+
+```bash
+systemctl restart kubelet
+```
+ 2 / swap is not supported by default on Kubernetes. 
 
 ```bash
 swapoff -a
 ```
+
+## TLS certificate errors
+```bash
+# kubectl get pods
+Unable to connect to the server: x509: certificate signed by unknown authority (possibly because of "crypto/rsa: verification error" while trying to verify candidate authority certificate "kubernetes")
+```
+Solution
+* Verify that the $HOME/.kube/config file contains a valid certificate
+* Unset the KUBECONFIG environment variable using:
+```bash
+unset KUBECONFIG
+```
+Or set it to the default KUBECONFIG location:
+```bash
+export KUBECONFIG=/etc/kubernetes/admin.conf
+```
+
