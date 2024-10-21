@@ -93,7 +93,9 @@ k9s
 ![image](https://github.com/user-attachments/assets/213424c5-79a2-42cd-8558-326f5b9958c0)
 
 ## Management of Kubernetes Objects Using Kustomize
-installation of kustomize 
+Kustomize is a standalone tool to customize Kubernetes objects through a kustomization file.
+
+Installation of kustomize 
 ```bash
 curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
 sudo mv kustomize /usr/local/bin
@@ -176,7 +178,7 @@ Result:
 service "http-test-kustomize" deleted
 deployment.apps "http-test-kustomize" deleted
 ```
-### objective
+### Objective
 In this exemple, we have used commonLabels and namespece in kustomization.yaml where label env: dev and namespace: development gets added to the customized deployment.yaml.
 
 ![image-9](https://github.com/user-attachments/assets/282f12bf-df63-4a8a-989a-a123e16b5ed1)
