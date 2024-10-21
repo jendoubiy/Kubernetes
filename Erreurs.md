@@ -9,7 +9,7 @@ kubeadm blocks waiting for control plane during installation
 * the cgroup driver of the container runtime differs from that of the kubelet. To understand how to configure it properly, see Configuring a cgroup driver.
 * control plane containers are crashlooping or hanging.
   
- you can try running kubeadm join with the --ignore-preflight-errors flag to ignore any preflight errors
+ you can try running kubeadm init with the --ignore-preflight-errors flag to ignore any preflight errors
 ```bash
 kubeadm init --ignore-preflight-errors
 ```
