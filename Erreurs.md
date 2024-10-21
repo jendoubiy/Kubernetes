@@ -70,4 +70,13 @@ N: See apt-secure(8) manpage for repository creation and user configuration deta
 E: Failed to fetch https://apt.dockerproject.org/repo/dists/ubuntu-xenial/main/binary-amd64/Packages
 E: Some index files failed to download. They have been ignored, or old ones used instead.
 ```
+Solution 
+```bash
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+```
+replace this $(. /etc/os-release && echo "$VERSION_CODENAME") with the latest stable debian releas
 
