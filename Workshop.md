@@ -167,3 +167,19 @@ Project Tree
     |__ service.yaml
     |__ kustomization.yaml
 ```
+apply and generate k8s resources from kustomize
+```bash
+kubectl apply -k base
+```
+Result:
+```bash
+service "http-test-kustomize" deleted
+deployment.apps "http-test-kustomize" deleted
+```
+objective :
+In this exemple, we have used commonLabels and namespece in kustomization.yaml where label env: dev and namespace: development gets added to the customized deployment.yaml.
+![image-9](https://github.com/user-attachments/assets/282f12bf-df63-4a8a-989a-a123e16b5ed1)
+
+
+
+
