@@ -92,3 +92,78 @@ k9s
 ```
 ![image](https://github.com/user-attachments/assets/213424c5-79a2-42cd-8558-326f5b9958c0)
 
+## Management of Kubernetes Objects Using Kustomize
+installation of kustomize 
+```bash
+curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
+sudo mv kustomize /usr/local/bin
+```
+Create Repo 'base'
+```bash
+mkdir base
+```
+Create Deployment file 'deployment.yaml'
+```bash
+vim base/deployment.yaml
+```
+```bash
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: http-test-kustomize
+spec:
+  selector:
+    matchLabels:
+      app: http-test-kustomize
+  template:
+    metadata:
+      labels:
+        app: http-test-kustomize
+    spec:
+      containers:
+      - name: http-test-kustomize
+        image: nginx
+        ports:
+        - name: http
+          containerPort: 8080
+          protocol: TCP
+```
+Create service file 'service.yaml'
+```bash
+vim base/service.yaml
+```
+```bash
+apiVersion: v1
+kind: Service
+metadata:
+  name: http-test-kustomize
+spec:
+  ports:
+    - name: http
+      port: 8080
+  selector:
+    app: http-test-kustomize
+```
+Porject Tree :
+```bash
+vim base/service.yaml
+```
+Create kustomize file 'kustomization.yaml'
+```bash
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+commonLabels:
+  app: http-test-kustomize
+
+resources:
+  - service.yaml
+  - deployment.yaml
+```
+Project Tree
+```bash
+|__ base
+    |__ deployment.yaml
+    |__ service.yaml
+    |__ kustomization.yaml
+```
