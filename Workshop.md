@@ -59,6 +59,8 @@ kubectl apply -f hello-app.yaml
 ```
 ![image](https://github.com/user-attachments/assets/921da68f-d57f-48fc-940d-f138a0f6c0bd)
 
+![image](https://github.com/user-attachments/assets/ca56ef27-fb87-463c-b9f4-e4249afe1341)
+
 ![image](https://github.com/user-attachments/assets/811a54c2-d711-4905-8096-d2de7b841d75)
 
 ## Installing helm for ubuntu
