@@ -85,6 +85,11 @@ helm install my-grafana grafana/grafana --namespace development
 ```
 ![image](https://github.com/user-attachments/assets/b41005be-41d0-4ca8-b380-065c9f526afc)
 
+![image](https://github.com/user-attachments/assets/4cc4422f-46b2-416c-a270-8118ff311822)
+
+![image](https://github.com/user-attachments/assets/94523b09-f117-478c-a798-7a5769b84c1d)
+
+
 ## Manage kubernetes cluster with k9s
 ```bash
 sudo wget https://github.com/derailed/k9s/releases/download/v0.32.4/k9s_Linux_amd64.tar.gz
