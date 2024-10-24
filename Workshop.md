@@ -71,15 +71,17 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/helm.
 sudo apt-get update
 sudo apt-get install helm
 ```
-## installing Prometheus using helm 
+## installing Prometheus & Grafana using helm 
 Add helm repo
 ```bash
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm repo add grafana https://grafana.github.io/helm-charts
 helm repo update
 ```
 Install the Prometheus helm chart
 ```bash
-helm install prometheus prometheus-community/prometheus
+helm install prometheus prometheus-community/prometheus 
+helm install my-grafana grafana/grafana --namespace development
 ```
 ![image](https://github.com/user-attachments/assets/b41005be-41d0-4ca8-b380-065c9f526afc)
 
