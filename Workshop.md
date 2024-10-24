@@ -92,6 +92,9 @@ k9s
 ```
 ![image](https://github.com/user-attachments/assets/213424c5-79a2-42cd-8558-326f5b9958c0)
 
+![image](https://github.com/user-attachments/assets/a9be3eca-4237-47cf-8ab9-8337279d484e)
+
+
 ## Management of Kubernetes Objects Using Kustomize
 Kustomize is a standalone tool to customize Kubernetes objects through a kustomization file.
 
