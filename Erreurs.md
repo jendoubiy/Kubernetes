@@ -10,6 +10,11 @@ kubeadm blocks waiting for control plane during installation
 * control plane containers are crashlooping or hanging.
   
  you can try running kubeadm init with the --ignore-preflight-errors flag to ignore any preflight errors
+ * Directory Availability Errors
+ * User Privilege Errors
+ * Swap Errors
+ * CPU Availability Errors
+ * File Content Errors
 ```bash
 kubeadm init --ignore-preflight-errors
 ```
