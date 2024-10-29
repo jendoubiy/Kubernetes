@@ -51,7 +51,11 @@ disable the swap in the machine with :
 ```bash
 swapoff -a
 ```
-
+## kubelet troubleshooting
+to see kubelet's logs :
+```bash
+journalctl -u kubelet
+```
 ## TLS certificate errors
 ```bash
 # kubectl get pods
