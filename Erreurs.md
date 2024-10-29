@@ -19,7 +19,6 @@ kubeadm blocks waiting for control plane during installation
 kubeadm init --ignore-preflight-errors
 ```
 ## Error starting kubelet service
-swap is not supported by default on Kubernetes. 
 ```bash
 ● kubelet.service - kubelet: The Kubernetes Node Agent
    Loaded: loaded (/lib/systemd/system/kubelet.service; enabled; vendor preset: enabled)
